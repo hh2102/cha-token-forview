@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import { LineChart, ChevronDown, ChevronUp } from 'lucide-react'
@@ -11,10 +11,24 @@ import { Card } from "@/components/ui/card"
 
 export default function Page() {
   const [isExpanded, setIsExpanded] = useState(false)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [contentTop, setContentTop] = useState(0)
 
   const toggleContent = () => {
+    if (contentRef.current) {
+      setContentTop(contentRef.current.offsetTop)
+    }
     setIsExpanded(!isExpanded)
   }
+
+  useEffect(() => {
+    if (isExpanded && contentRef.current) {
+      window.scrollTo({
+        top: contentTop,
+        behavior: 'smooth'
+      })
+    }
+  }, [isExpanded, contentTop])
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -33,7 +47,7 @@ export default function Page() {
         <div className="container px-4 py-8 md:py-12 lg:py-16 max-w-6xl">
           <div className="grid gap-8 lg:grid-cols-[1fr_300px] lg:divide-x">
             {/* Main Content */}
-            <div className="space-y-6">
+            <div className="space-y-6" ref={contentRef}>
               <div>
                 <h1 className="mb-4 text-2xl font-bold tracking-tight lg:text-3xl">Research Article Title</h1>
                 <div className="flex items-center space-x-4">
@@ -58,7 +72,7 @@ export default function Page() {
                 </p>
                 <h2>How does UiPath explain itself in the first minute?</h2>
                 <p>
-                  "AI breakthroughs, Groundbreaking research, Leading AI researchers. All at UiPath.ai."
+                  &ldquo;AI breakthroughs, Groundbreaking research, Leading AI researchers. All at UiPath.ai.&rdquo;
                 </p>
                 <h2>How does UiPath work?</h2>
                 <p>
@@ -81,7 +95,7 @@ export default function Page() {
                       <li>Effective data management requires careful planning and consideration of various factors.</li>
                     </ul>
                     <p>
-                      As we delve deeper into the world of automation and data management, it's crucial to understand that these
+                      As we delve deeper into the world of automation and data management, it&rsquo;s crucial to understand that these
                       tools are not just about efficiency, but about transforming how we interact with and utilize information.
                       The journey with platforms like UiPath is as much about technological advancement as it is about reimagining
                       our approach to work and decision-making processes.
