@@ -34,9 +34,18 @@ export default function Page() {
     <div className="min-h-screen bg-background flex flex-col">
       <header className="border-b w-full">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <div className="flex items-center space-x-2">
-            <LineChart className="h-6 w-6 text-primary" />
-            <span className="font-semibold">ChaToken Insights</span>
+        <div className="flex items-center space-x-4">
+            <div className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="ChaToken Insights Logo"
+                width={200}
+                height={40}
+                priority
+              />
+            </div>
+            <Separator.Root className="h-5 w-px bg-border mx-4" orientation="vertical" />
+            <span className="text-sm">All Research</span>
           </div>
           <Link
             href="/privacy-policy"
