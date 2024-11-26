@@ -1,38 +1,25 @@
-import { useEffect, useRef } from 'react'
+import { Button } from "./ui/button";
 
 const CoinGeckoWidget = () => {
-  const widgetRef = useRef<HTMLDivElement>(null)
+  return (
+    <div className="w-[320px]">
+      <gecko-coin-list-widget
+        locale="en"
+        outlined="true"
+        coin-ids=""
+        initial-currency="usd"
+      >
+      </gecko-coin-list-widget>
+      <div className="flex flex-col gap-2 ">
+        <Button className="w-full flex items-center justify-center gap-2">
+          Buy in USD <span className="text-lg">$</span>
+        </Button>
+        <Button className="w-full flex items-center justify-center gap-2">
+          Buy in crypto <span className="text-lg">₿</span>
+        </Button>
+      </div>
+    </div>
+  );
+};
 
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = "https://widgets.coingecko.com/coingecko-coin-list-widget.js"
-    script.async = true
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (widgetRef.current) {
-      const widget = document.createElement('coingecko-coin-list-widget')
-      widget.setAttribute('coin-ids', '')
-      widget.setAttribute('currency', 'usd')
-      widget.setAttribute('locale', 'en')
-      widget.setAttribute('width', '300')
-      widgetRef.current.appendChild(widget)
-
-      return () => {
-        if (widgetRef.current && widgetRef.current.firstChild) {
-          widgetRef.current.removeChild(widgetRef.current.firstChild)
-        }
-      }
-    }
-  }, [])
-
-  return <div ref={widgetRef}></div>
-}
-
-export default CoinGeckoWidget
-
+export default CoinGeckoWidget;
