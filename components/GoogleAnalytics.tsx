@@ -33,6 +33,12 @@ function GoogleAnalyticsInner() {
   return null
 }
 
+export function sendGAEvent(action: string, params: object) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, params)
+  }
+}
+
 export default function GoogleAnalytics() {
   return (
     <>
