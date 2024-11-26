@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { Suspense } from 'react'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,10 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}>
           <GoogleAnalytics />
           {children}
+          <Script
+          src="https://widgets.coingecko.com/gecko-coin-list-widget.js"
+          strategy="afterInteractive"
+        />
         </Suspense>
       </body>
     </html>

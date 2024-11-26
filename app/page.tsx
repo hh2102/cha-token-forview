@@ -124,20 +124,15 @@ export default function Page() {
             </div>
             
             {/* Sidebar */}
-            <div className="space-y-4 lg:pl-8">
-              <Card className="p-4">
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold">$0.3026</span>
-                    <span className="text-sm text-green-500">+4.65%</span>
-                  </div>
-                </div>
-                <div className="aspect-[4/3] w-full bg-muted" />
-                <div className="mt-4 flex space-x-2">
-                  <Button size="sm" className="w-full">Buy in USD</Button>
-                  <Button size="sm" variant="outline" className="w-full">Buy in crypto</Button>
-                </div>
-              </Card>
+             {/* CoinGecko Widget */}
+            <div className="w-[360px] p-6">
+              <gecko-coin-list-widget 
+                locale="en"
+                outlined="true"
+                coin-ids=""
+                initial-currency="usd"
+              ></gecko-coin-list-widget>
+              
             </div>
           </div>
         </div>
