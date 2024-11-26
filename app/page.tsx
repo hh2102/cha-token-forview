@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, LineChart } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import * as Separator from "@radix-ui/react-separator";
 
 import { Button } from "@/components/ui/button";
