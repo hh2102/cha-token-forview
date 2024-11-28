@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import * as Separator from "@radix-ui/react-separator";
@@ -11,9 +11,9 @@ import ThemeToggle from "@/components/ThemeToggle";
 import ThemeLogo from "@/components/ThemeLogo";
 
 export default function Page() {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const isExpanded = false;
   const contentRef = useRef<HTMLDivElement>(null);
-  const [contentTop, setContentTop] = useState(0);
+  const contentTop = 0
 
   useEffect(() => {
     if (isExpanded && contentRef.current) {
