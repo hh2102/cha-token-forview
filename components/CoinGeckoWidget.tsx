@@ -1,7 +1,11 @@
-import { Button } from "./ui/button";
-import { sendGAEvent } from "./GoogleAnalytics";
+"use client"
+
+import { Button } from "./ui/button"
+import { useTheme } from "@/hooks/useTheme"
+import { sendGAEvent } from "@/components/GoogleAnalytics"
+
 const CoinGeckoWidget = () => {
-  sendGAEvent("CoinGeckoWidget", {});
+  const isDark = useTheme()
 
   const onButtonBuyUSD = () => {
     console.log('on button buy usd :>> ');
@@ -20,15 +24,20 @@ const CoinGeckoWidget = () => {
         outlined="true"
         coin-ids=""
         initial-currency="usd"
+        {...(isDark ? { "dark-mode": "true" } : {})}
       >
       </gecko-coin-list-widget>
       <div className="flex flex-col gap-2 mt-4">
-        <Button className="w-full flex items-center justify-center gap-2"
-          onClick={onButtonBuyUSD}>
+        <Button 
+          className="w-full flex items-center justify-center gap-2 bg-background hover:bg-accent text-foreground border border-foreground/20 hover:border-foreground/40"
+          onClick={onButtonBuyUSD}
+        >
           Buy in USD <span className="text-lg">$</span>
         </Button>
-        <Button className="w-full flex items-center justify-center gap-2"
-          onClick={onButtonBuyCrypto}>
+        <Button 
+          className="w-full flex items-center justify-center gap-2 bg-background hover:bg-accent text-foreground border border-foreground/20 hover:border-foreground/40"
+          onClick={onButtonBuyCrypto}
+        >
           Buy in crypto <span className="text-lg">₿</span>
         </Button>
       </div>
@@ -37,3 +46,4 @@ const CoinGeckoWidget = () => {
 };
 
 export default CoinGeckoWidget;
+
