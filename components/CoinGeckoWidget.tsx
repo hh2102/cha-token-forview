@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { Button } from "./ui/button"
-import { useTheme } from "@/hooks/useTheme"
-import { sendGAEvent } from "@/components/GoogleAnalytics"
+import { Button } from "./ui/button";
+import { useTheme } from "@/hooks/useTheme";
+import { sendGAEvent } from "@/components/GoogleAnalytics";
 
-const CoinGeckoWidget = ({ currency, fiatName}: {
-  currency: string,
-  fiatName: string
+const CoinGeckoWidget = ({ currency, fiatName }: {
+  currency: string;
+  fiatName: string;
 }) => {
-  const isDark = useTheme()
-  console.log('currency, fiatName :>> ', currency, fiatName);
+  const isDark = useTheme();
+  console.log("currency, fiatName :>> ", currency, fiatName);
 
   // const onButtonBuyUSD = () => {
   //   console.log('on button buy usd :>> ');
@@ -22,8 +22,8 @@ const CoinGeckoWidget = ({ currency, fiatName}: {
   // };
 
   const onButtonSubscirbe = () => {
-    console.log('on button onButtonSubscirbe :>> ');
-    sendGAEvent('subscirbe', {})
+    console.log("on button onButtonSubscirbe :>> ");
+    sendGAEvent("subscirbe", {});
   };
 
   return (
@@ -37,28 +37,30 @@ const CoinGeckoWidget = ({ currency, fiatName}: {
       >
       </gecko-coin-price-chart-widget>
       <div className="flex flex-col gap-2 mt-4">
-      <Button 
-          className="w-full flex items-center justify-center gap-2 bg-background hover:bg-accent text-foreground border border-foreground/20 hover:border-foreground/40"
+        <Button
+          className="bg-[#3861fb] hover:bg-[#3B82F6]/90  font-bold text-lg px-8 py-3 w-full flex items-center   justify-center
+         gap-2  border border-foreground/20 hover:border-foreground/40"
           onClick={onButtonSubscirbe}
         >
-        Subscrible Now!
+          Subscrible Now!
         </Button>
-        {/* <Button 
+        {
+          /* <Button
           className="w-full flex items-center justify-center gap-2 bg-background hover:bg-accent text-foreground border border-foreground/20 hover:border-foreground/40"
           onClick={onButtonBuyUSD}
         >
           Buy in USD <span className="text-lg">$</span>
         </Button>
-        <Button 
+        <Button
           className="w-full flex items-center justify-center gap-2 bg-background hover:bg-accent text-foreground border border-foreground/20 hover:border-foreground/40"
           onClick={onButtonBuyCrypto}
         >
           Buy in crypto <span className="text-lg">₿</span>
-        </Button> */}
+        </Button> */
+        }
       </div>
     </div>
   );
 };
 
 export default CoinGeckoWidget;
-
