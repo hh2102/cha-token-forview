@@ -1,9 +1,9 @@
 "use client"
 
-import { useTheme } from "@/hooks/useTheme"
+// import { useTheme } from "@/hooks/useTheme"
 
 export default function ThemeLogo() {
-  const isDark = useTheme()
+  // const isDark = useTheme()
 
   return (
     <div className="font-['IBM_Plex_Mono',_monospace] font-bold text-2xl">
