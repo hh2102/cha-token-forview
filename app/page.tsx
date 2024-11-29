@@ -9,6 +9,8 @@ import ThemeToggle from "@/components/ThemeToggle";
 import ThemeLogo from "@/components/ThemeLogo";
 
 import { headers } from "next/headers";
+import FixedAside from "@/components/FixedAside";
+import Footer from "@/components/Footer";
 
 export default async function Page() {
   // const isExpanded = false;
@@ -48,7 +50,7 @@ export default async function Page() {
   // }, [isExpanded, contentTop]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col font-['IBM_Plex_Mono',_monospace]">
       <header className="border-b w-full">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <div className="flex items-center space-x-4">
@@ -73,8 +75,9 @@ export default async function Page() {
             {/* Main Content */}
             <div className="space-y-6">
               <div>
-                <h1 className="mb-4 text-2xl font-bold tracking-tight text-foreground lg:text-3xl">
+                  <h1 className="mb-4 text-2xl font-bold tracking-tight text-[rgb(40,39,40)] dark:text-[rgb(210,209,210)] lg:text-3xl">
                   ChillGuy: The Viral Meme Token That Delivered 6,580x Returns
+
                 </h1>
                 <div className="flex items-center space-x-4">
                   <Image
@@ -262,7 +265,7 @@ export default async function Page() {
               </div>
             </div>
 
-            <aside className="p-6">
+            <FixedAside>
               <CoinGeckoWidget
                 currency={vistorInfo.currency}
                 fiatName={vistorInfo.fiatName}
@@ -308,10 +311,11 @@ export default async function Page() {
                 </div>
               </div> */
               }
-            </aside>
+            </FixedAside>
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
