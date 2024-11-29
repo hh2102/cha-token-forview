@@ -11,7 +11,7 @@ interface ContinueReadingProps {
   maxHeight?: number
 }
 
-export default function ContinueReading({ children, maxHeight = 200 }: ContinueReadingProps) {
+export default function ContinueReading({ children, maxHeight = 700 }: ContinueReadingProps) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
@@ -20,12 +20,12 @@ export default function ContinueReading({ children, maxHeight = 200 }: ContinueR
         className={cn(
           "relative overflow-hidden transition-all duration-300",
           !isExpanded && {
-            "max-h-[200px]": true,
+            "max-h-[700px]": true,
             "after:absolute": true,
             "after:bottom-0": true,
             "after:left-0": true,
             "after:right-0": true,
-            "after:h-24": true,
+            "after:h-72": true,
             "after:bg-gradient-to-t": true,
             "after:from-background": true,
             "after:to-transparent": true,

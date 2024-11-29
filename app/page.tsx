@@ -55,22 +55,15 @@ export default async function Page() {
             <div className="flex items-center">
               <ThemeLogo />
             </div>
-            <Separator.Root
-              className="h-5 w-px bg-border mx-4"
-              orientation="vertical"
-            />
-            <span className="text-sm font-medium text-foreground">
-              All Research
-            </span>
           </div>
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <Link
+            {/* <Link
               href="/privacy-policy"
               className="text-sm text-muted-foreground hover:underline"
             >
               Privacy Policy
-            </Link>
+            </Link> */}
           </div>
         </div>
       </header>

@@ -28,14 +28,14 @@ const CoinGeckoWidget = ({ currency, fiatName}: {
 
   return (
     <div className="w-[320px]">
-      <gecko-coin-list-widget
+      <gecko-coin-price-chart-widget
         locale="en"
         outlined="true"
-        coin-ids=""
+        coin-id="chill-guy"
         initial-currency={currency}
         {...(isDark ? { "dark-mode": "true" } : {})}
       >
-      </gecko-coin-list-widget>
+      </gecko-coin-price-chart-widget>
       <div className="flex flex-col gap-2 mt-4">
       <Button 
           className="w-full flex items-center justify-center gap-2 bg-background hover:bg-accent text-foreground border border-foreground/20 hover:border-foreground/40"
