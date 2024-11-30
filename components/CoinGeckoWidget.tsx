@@ -28,21 +28,28 @@ const CoinGeckoWidget = ({ currency, fiatName }: {
 
   return (
     <div className="w-[320px]">
-      <gecko-coin-price-chart-widget
+      {/* <gecko-coin-price-chart-widget
         locale="en"
         outlined="true"
         coin-id="chill-guy"
         initial-currency={currency}
         {...(isDark ? { "dark-mode": "true" } : {})}
       >
-      </gecko-coin-price-chart-widget>
+      </gecko-coin-price-chart-widget> */}
+      <gecko-coin-list-widget
+      locale="en" 
+      outlined="true" 
+      coin-ids="virtual-protocol,luna-by-virtuals,game-by-virtuals,tokenbot-2,luminous,bug,super-anon" 
+      initial-currency={currency}
+      {...(isDark ? { "dark-mode": "true" } : {})}>
+      </gecko-coin-list-widget>
       <div className="flex flex-col gap-2 mt-4">
         <Button
-          className="bg-[#3861fb] hover:bg-[#3B82F6]/90  font-bold text-lg px-8 py-3 w-full flex items-center   justify-center
+          className="bg-[#3861fb] hover:bg-[#3B82F6]/90  font-bold text-lg px-8 py-6 w-full flex items-center   justify-center
          gap-2  border border-foreground/20 hover:border-foreground/40"
           onClick={onButtonSubscirbe}
         >
-          Subscrible Now!
+          Subscribe Now!
         </Button>
         {
           /* <Button

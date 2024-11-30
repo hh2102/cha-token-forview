@@ -90,7 +90,7 @@ export default async function Page() {
                   <div>
                     <div className="font-medium text-foreground">Jane Doe</div>
                     <div className="text-sm text-muted-foreground">
-                      Dec 23rd, 2024
+                      Nov 23rd, 2024
                     </div>
                   </div>
                 </div>

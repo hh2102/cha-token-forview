@@ -8,7 +8,7 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ChaToken Insights',
+  title: 'ChaToken Insight',
   description: 'Research articles and insights about blockchain and cryptocurrencies',
 }
 
@@ -24,7 +24,7 @@ export default function RootLayout({
           <GoogleAnalytics />
           {children}
           <Script
-          src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"
+          src="https://widgets.coingecko.com/gecko-coin-list-widget.js"
           strategy="afterInteractive"
         />
         </Suspense>
