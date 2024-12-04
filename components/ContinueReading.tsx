@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ArrowRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -9,18 +9,30 @@ import { sendGAEvent } from "@/components/GoogleAnalytics"
 interface ContinueReadingProps {
   children: React.ReactNode
   maxHeight?: number
+  threshold?: number // Add threshold prop
 }
 
-export default function ContinueReading({ children, maxHeight = 700 }: ContinueReadingProps) {
+export default function ContinueReading({ children, maxHeight = 700, threshold = 0.3 }: ContinueReadingProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [contentHeight, setContentHeight] = useState(0)
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.scrollHeight)
+    }
+  }, [children])
+
+  const visibleHeight = contentHeight * threshold
 
   return (
     <div>
       <div
+        ref={contentRef}
         className={cn(
           "relative overflow-hidden transition-all duration-300",
           !isExpanded && {
-            "max-h-[700px]": true,
+            [`max-h-[${visibleHeight}px]`]: true,
             "after:absolute": true,
             "after:bottom-0": true,
             "after:left-0": true,
@@ -31,7 +43,7 @@ export default function ContinueReading({ children, maxHeight = 700 }: ContinueR
             "after:to-transparent": true,
           }
         )}
-        style={{ maxHeight: isExpanded ? "none" : maxHeight }}
+        style={{ maxHeight: isExpanded ? "none" : visibleHeight }}
       >
         {children}
       </div>
