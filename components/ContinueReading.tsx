@@ -8,11 +8,10 @@ import { sendGAEvent } from "@/components/GoogleAnalytics"
 
 interface ContinueReadingProps {
   children: React.ReactNode
-  maxHeight?: number
   threshold?: number // Add threshold prop
 }
 
-export default function ContinueReading({ children, maxHeight = 700, threshold = 0.3 }: ContinueReadingProps) {
+export default function ContinueReading({ children, threshold = 0.3 }: ContinueReadingProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [contentHeight, setContentHeight] = useState(0)
   const contentRef = useRef<HTMLDivElement>(null)
