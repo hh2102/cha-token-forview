@@ -45,14 +45,14 @@ export default async function Page() {
         "contents": [
           // {
           //   "type": "image",
-          //   "src": "/article/1.png",
+          //   "src": "/article/1.PNG",
           //   "alt": "Introduction image 1",
           //   "width": 300,
           //   "height": 200
           // },
           {
             "type": "image",
-            "src": "/article/2.png",
+            "src": "/article/2.PNG",
             "alt": "Introduction image 2",
             "width": 300,
             "height": 200
@@ -80,7 +80,7 @@ export default async function Page() {
         "contents": [
           {
             "type": "image",
-            "src": "/article/3.png",
+            "src": "/article/3.PNG",
             "alt": "Pump.fun platform",
             "width": 450,
             "height": 300
@@ -104,14 +104,14 @@ export default async function Page() {
         "contents": [
           {
             "type": "image",
-            "src": "/article/4.png",
+            "src": "/article/4.PNG",
             "alt": "Issuance Process diagram 1",
             "width": 350,
             "height": 200
           },
           {
             "type": "image",
-            "src": "/article/5.png",
+            "src": "/article/5.PNG",
             "alt": "Issuance Process diagram 2",
             "width": 350,
             "height": 200
@@ -131,7 +131,7 @@ export default async function Page() {
         "contents": [
           {
             "type": "image",
-            "src": "/article/6.png",
+            "src": "/article/6.PNG",
             "alt": "Bonding Curve diagram",
             "width": 400,
             "height": 250
@@ -155,7 +155,7 @@ export default async function Page() {
         "contents": [
           {
             "type": "image",
-            "src": "/article/7.png",
+            "src": "/article/7.PNG",
             "alt": "Formula and Mechanics diagram",
             "width": 450,
             "height": 300
