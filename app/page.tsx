@@ -32,7 +32,7 @@ export default async function Page() {
   const articleContent = {
     "title": "MEME 1.0: From Pump.fun To Base",
     "author": "Jane Doe",
-    "date": "Dec 23rd, 2024",
+    "date": "Nov 30th, 2024",
     "authorAvatar": {
       "src": "/avatar.jpg",
       "alt": "Author avatar",
@@ -43,13 +43,13 @@ export default async function Page() {
       {
         "subtitle": "Introduction",
         "contents": [
-          {
-            "type": "image",
-            "src": "/article/1.png",
-            "alt": "Introduction image 1",
-            "width": 300,
-            "height": 200
-          },
+          // {
+          //   "type": "image",
+          //   "src": "/article/1.png",
+          //   "alt": "Introduction image 1",
+          //   "width": 300,
+          //   "height": 200
+          // },
           {
             "type": "image",
             "src": "/article/2.png",
@@ -63,7 +63,7 @@ export default async function Page() {
           },
           {
             "type": "text",
-            "content": "According to Artemis data (image placeholder), over the past three months, Base has recorded the second-highest net capital inflow, trailing only Solana and significantly outpacing third-place Sui. However, recent metrics (as of November 28, 2024) have flipped expectations on their head. The Base chain now boasts a net inflow of $1.3 billion, surpassing Solana and taking the lead."
+            "content": "According to Artemis data, over the past three months, Base has recorded the second-highest net capital inflow, trailing only Solana and significantly outpacing third-place Sui. However, recent metrics (as of November 28, 2024) have flipped expectations on their head. The Base chain now boasts a net inflow of $1.3 billion, surpassing Solana and taking the lead."
           },
           {
             "type": "text",
@@ -214,13 +214,6 @@ export default async function Page() {
             "content": "As illustrated above, AI Agents in Virtuals Protocol can accomplish tasks ranging from in-game scene interactions and managing social media posts (e.g., on Twitter) to executing on-chain transactions as proxies. Below are their key capabilities:\n• Language Communication and 3D Movement: AI Agents can engage in natural conversation and navigate 3D spaces, enabling limitless content creation for games and applications.\n• Learning, Planning, and Decision-Making: Agents adapt dynamically by learning, planning, and making decisions as game or application scenarios evolve.\n• Environmental Interaction: Player actions trigger unique responses from the agents, creating immersive, personalized storylines.\n• On-Chain Transaction Capability: Agents come equipped with blockchain wallets, empowering them to perform autonomous on-chain transactions."
           },
           {
-            "type": "image",
-            "src": "/article/9.png",
-            "alt": "Virtuals Protocol AI Agents",
-            "width": 450,
-            "height": 300
-          },
-          {
             "type": "text",
             "content": "In mid-October, Virtuals Protocol leveraged its cutting-edge AI Agent technology to launch IAO, its meme issuance platform. This strategic expansion marked its foray into the AI meme domain, solidifying its position as a leading protocol on the Base chain."
           }
@@ -231,8 +224,8 @@ export default async function Page() {
         "contents": [
           {
             "type": "image",
-            "src": "/article/10.png",
-            "alt": "Market Performance chart",
+            "src": "/article/9.png",
+            "alt": "Virtuals Protocol AI Agents",
             "width": 450,
             "height": 300
           },
@@ -247,8 +240,8 @@ export default async function Page() {
         "contents": [
           {
             "type": "image",
-            "src": "/article/12.png",
-            "alt": "Product Overview diagram",
+            "src": "/article/10.png",
+            "alt": "Market Performance chart",
             "width": 450,
             "height": 300
           },
@@ -404,13 +397,13 @@ Clanker is an AI Agent developed by Dish and Proxystudio.eth. Originally conceiv
 Clanker then automatically generates the token and supplies a corresponding Clanker.world link for trading and dashboard access.
 `
           },
-          {
-            "type": "image",
-            "src": "/article/20.png",
-            "alt": "Issuance Process diagram",
-            "width": 450,
-            "height": 300
-          },
+          // {
+          //   "type": "image",
+          //   "src": "/article/20.png",
+          //   "alt": "Issuance Process diagram",
+          //   "width": 450,
+          //   "height": 300
+          // }, // Failed to load the image, maybe it's too large
           {
             type: 'text',
             content: `A significant differentiator is that Clanker does not distinguish between internal and external markets. Upon creation, tokens are directly deployed on Uniswap. If the issuer wishes to acquire their tokens, they must manually purchase them via the Clanker.world token page. For trading activities and data analysis, platforms like BaseScan and DexScreener provide seamless support.
@@ -483,13 +476,13 @@ Overall, Clanker’s strength lies in its ability to expand the meme market’s 
 Recent adjustments to income distribution ratios and ongoing technical upgrades highlight the team’s dedication to creating a supportive environment for meme token deployers.
 `
         },
-        {
-          "type": "image",
-          "src": "/article/26.png",
-          "alt": "Issuance Process diagram",
-          "width": 450,
-          "height": 300
-        },
+        // {
+        //   "type": "image",
+        //   "src": "/article/26.png",
+        //   "alt": "Issuance Process diagram",
+        //   "width": 450,
+        //   "height": 300
+        // }, // Failed to load the image, maybe it's too large
         {
           type: 'text',
           content: `In the secondary market, $CLANKER’s market cap is rapidly climbing, recently nearing the $100 million mark. The token has even garnered attention from centralized exchanges like Gate, further fueling speculation about its future price trajectory.
@@ -500,13 +493,13 @@ Recent adjustments to income distribution ratios and ongoing technical upgrades 
       {
         subtitle: 'BaseChain Exploration Methods',
         contents: [
-          {
-            "type": "image",
-            "src": "/article/27.png",
-            "alt": "Issuance Process diagram",
-            "width": 450,
-            "height": 300
-          },
+          // {
+          //   "type": "image",
+          //   "src": "/article/27.png",
+          //   "alt": "Issuance Process diagram",
+          //   "width": 450,
+          //   "height": 300
+          // }, // Failed to load the image, maybe it's too large
           {
             type: 'text',
             content: `When exploring memes on Base, Warpcast emerges as an essential tool alongside other meme data platforms.
