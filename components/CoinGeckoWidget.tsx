@@ -4,9 +4,10 @@ import { Button } from "./ui/button";
 import { useTheme } from "@/hooks/useTheme";
 import { sendGAEvent } from "@/components/GoogleAnalytics";
 
-const CoinGeckoWidget = ({ currency, fiatName }: {
+const CoinGeckoWidget = ({ currency, fiatName, coinIds }: {
   currency: string;
   fiatName: string;
+  coinIds: string;
 }) => {
   const isDark = useTheme();
   console.log("currency, fiatName :>> ", currency, fiatName);
@@ -39,7 +40,7 @@ const CoinGeckoWidget = ({ currency, fiatName }: {
       <gecko-coin-list-widget
       locale="en" 
       outlined="true" 
-      coin-ids="virtual-protocol,luna-by-virtuals,game-by-virtuals,tokenbot-2,luminous,bug,super-anon" 
+      coin-ids={coinIds} 
       initial-currency={currency}
       {...(isDark ? { "dark-mode": "true" } : {})}>
       </gecko-coin-list-widget>

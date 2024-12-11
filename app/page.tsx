@@ -600,6 +600,7 @@ While the initial fervor for on-chain meme PvP has cooled, the meme economy is p
               <CoinGeckoWidget
                 currency={vistorInfo.currency}
                 fiatName={vistorInfo.fiatName}
+                coinIds="virtual-protocol,luna-by-virtuals,game-by-virtuals,tokenbot-2,luminous,bug,super-anon"
               />
               {
                 /* <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[320px]  mt-6">
