@@ -32,7 +32,7 @@ export default async function Page() {
   const articleContent = {
     title: "MEME 1.0: From Pump.fun To Base",
     author: "Jane Doe",
-    date: "Dec 23rd, 2024",
+    date: "Nov 23rd, 2024",
     authorAvatar: {
       src: "/avatar.jpg",
       alt: "Author avatar",
