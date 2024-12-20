@@ -4,7 +4,7 @@ import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, Suspense } from 'react'
 
-export const GA_TRACKING_ID = 'G-6VJBRG0WXQ' // Replace with your actual Google Analytics tracking ID
+export const GA_TRACKING_ID = process.env.GA_TRACKING_ID || ''
 
 declare global {
   interface Window {
