@@ -24,9 +24,13 @@ export default function RootLayout({
           <GoogleAnalytics />
           {children}
           <Script
-          src="https://widgets.coingecko.com/gecko-coin-list-widget.js"
-          strategy="afterInteractive"
-        />
+            src="https://widgets.coingecko.com/gecko-coin-list-widget.js"
+            strategy="afterInteractive"
+          />
+          <Script
+            src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"
+            strategy="afterInteractive"
+          />
         </Suspense>
       </body>
     </html>
