@@ -44,12 +44,6 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
         }} >
           All funds
         </div>
-        {/* <Image src="/fund/topButtonLeft.png" width={168} height={56} alt="All funds" className={styles.topButtonLeft} onClick={() => {
-          sendGAEvent("cha token test", {
-            "position": "Top Button Group Left"
-          })
-          notify()
-        }} /> */}
         <div className={styles.topButtonRight} onClick={() => {
           notify()
           sendGAEvent("cha token test", {
@@ -58,12 +52,6 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
         }} >
           Buy now
         </div>
-        {/* <Image src="/fund/topButtonRight.png" width={178} height={56} alt="Buy now" className={styles.topButtonRight} onClick={() => {
-          notify()
-          sendGAEvent("cha token test", {
-            "position": "Top Button Group Right"
-          })
-        }} /> */}
       </div>
     )
   }
