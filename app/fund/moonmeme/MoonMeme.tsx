@@ -43,6 +43,9 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
     setIsShowDialog(true);
   }
   function closeDialogHandler() {
+    sendGAEvent("dialog_close", {
+      "test": "test"
+    })
     setIsShowDialog(false);
   }
   function stopPropagationHandler(event: { stopPropagation: () => void }) {
@@ -91,12 +94,18 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
             <div className={styles.dialogMiddle}>
               <div className={styles.dialogMiddleTop}>
                 <div className={[styles.dialogMiddleItem, (activeValue == "100") && styles.dialogItemActive].filter(Boolean).join(' ')} onClick={() => {
+                  sendGAEvent("dialog_item_click", {
+                    value: "100"
+                  });
                   if (activeValue !== "100") handleSetActive("100")
                 }}>
                   <div className={[styles.dialogItemTop, (activeValue == "100") && styles.activeTextColor].filter(Boolean).join(' ')}>100 $CHA</div>
                   <div className={[styles.dialogItemBottom, (activeValue == "100") && styles.activeTextColor].filter(Boolean).join(' ')}>$9.9</div>
                 </div>
                 <div className={[styles.dialogMiddleItem, (activeValue == "500") && styles.dialogItemActive].filter(Boolean).join(' ')} onClick={() => {
+                  sendGAEvent("dialog_item_click", {
+                    value: "500"
+                  });
                   if (activeValue !== "500") handleSetActive("500")
                 }}>
                   <div className={[styles.dialogItemTop, (activeValue == "500") && styles.activeTextColor].filter(Boolean).join(' ')}>500 $CHA</div>
@@ -105,12 +114,18 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
               </div>
               <div className={styles.dialogMiddleBottom}>
                 <div className={[styles.dialogMiddleItem, (activeValue == "1000") && styles.dialogItemActive].filter(Boolean).join(' ')} onClick={() => {
+                  sendGAEvent("dialog_item_click", {
+                    value: "1000"
+                  });
                   if (activeValue !== "1000") handleSetActive("1000")
                 }}>
                   <div className={[styles.dialogItemTop, (activeValue == "1000") && styles.activeTextColor].filter(Boolean).join(' ')}>1000 $CHA</div>
                   <div className={[styles.dialogItemBottom, (activeValue == "1000") && styles.activeTextColor].filter(Boolean).join(' ')}>$99.9</div>
                 </div>
                 <div className={[styles.dialogMiddleItem, (activeValue == "custom") && styles.dialogItemActive].filter(Boolean).join(' ')} onClick={() => {
+                  sendGAEvent("dialog_item_click", {
+                    value: valueHandler
+                  });
                   if (activeValue !== "custom") handleSetActive("custom")
                 }}>
 
@@ -122,21 +137,17 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
             <div className={styles.dialogBottom}>
               <div className={styles.dialogBottomTopButton} onClick={() => {
                 notify()
-                sendGAEvent("cha token test", {
+                sendGAEvent("dialog_top_button_click", {
                   position: "Dialog TopButton",
                   value: activeValue == "custom" ? valueHandler : activeValue
                 });
               }}>Pay in $USD or other fiat</div>
               <div className={styles.dialogBottomBottomButton} onClick={() => {
                 notify()
-                sendGAEvent("cha token test", {
+                sendGAEvent("dialog_bottom_button_click", {
                   position: "Dialog BottomButton",
                   value: activeValue == "custom" ? valueHandler : activeValue
                 });
-                console.log({
-                  position: "Dialog BottomButton",
-                  value: activeValue == "custom" ? valueHandler : activeValue
-                })
               }}>Pay in USDT</div>
             </div>
           </div>
@@ -167,7 +178,7 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
         <div
           className={styles.topButtonLeft}
           onClick={() => {
-            sendGAEvent("cha token test", {
+            sendGAEvent("open_dialog", {
               position: "Top Button Group Left",
             });
             notify();
@@ -179,7 +190,7 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
           onClick={() => {
             // notify()
             showDialogHandler();
-            sendGAEvent("cha token test", {
+            sendGAEvent("open_dialog", {
               position: "Top Button Group Right",
             });
           }}>
@@ -219,7 +230,7 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
             <div
               id="middleButton"
               onClick={() => {
-                sendGAEvent("cha token test", {
+                sendGAEvent("open_dialog", {
                   position: "Middle Button",
                 });
                 showDialogHandler();
@@ -310,7 +321,7 @@ export default function Page(currency: CoinPriceMarqueeCurrency) {
         <div
           className={styles.thirdContentButton}
           onClick={() => {
-            sendGAEvent("cha token test", {
+            sendGAEvent("open_dialog", {
               position: "Bottom Button",
             });
             showDialogHandler();
